@@ -5,7 +5,11 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+<<<<<<< HEAD
 
+=======
+use App\Models\PreferensiUser;
+>>>>>>> f82841a4f6879ae72c36be2a404e1d3e62b9724d
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
  */
@@ -41,4 +45,12 @@ class UserFactory extends Factory
             'email_verified_at' => null,
         ]);
     }
+<<<<<<< HEAD
+=======
+
+    public function preferensiUser()
+{
+    return $this->hasOne(PreferensiUser::class);
+}
+>>>>>>> f82841a4f6879ae72c36be2a404e1d3e62b9724d
 }

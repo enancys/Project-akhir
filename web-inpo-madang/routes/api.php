@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 use App\Http\Controllers\Api\ApiCuisinesController;
 use App\Http\Controllers\Api\ApiFood_ingredientsController;
 use App\Http\Controllers\Api\ApiFoodsController;
@@ -9,11 +10,19 @@ use App\Http\Controllers\Api\ApiUser_preferencesController;
 use App\Http\Controllers\Api\ApiUserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+=======
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\ApiPreferensiUser;
+use App\Http\Controllers\Api\ApiPangananController;
+
+>>>>>>> f82841a4f6879ae72c36be2a404e1d3e62b9724d
 
 // Route::get('/user', function (Request $request) {
 //     return $request->user();
 // })->middleware('auth:sanctum');
 
+<<<<<<< HEAD
 
 Route::get('/cuisines', [ApiCuisinesController::class, 'index']);
 Route::post('/cuisines', [ApiCuisinesController::class, 'store']);
@@ -56,4 +65,17 @@ Route::post('/user', [ApiUserController::class, 'store']);
 Route::get('/user/{id}', [ApiUserController::class, 'show']);
 Route::put('/user/{id}', [ApiUserController::class, 'update']);
 Route::delete('/user/{id}', [ApiUserController::class, 'destroy']);
+=======
+Route::get('/panganan', [ApiPangananController::class, 'index']);
+Route::get('panganan/{id}',[ApiPangananController::class, 'show']);
+Route::post('/panganan', [ApiPangananController::class, 'store']);
+Route::put('/panganan/{id}', [ApiPangananController::class, 'update']);
+Route::delete('/panganan/{id}', [ApiPangananController::class, 'destroy']);
+
+Route::get('/preferensi_user', [ApiPreferensiUser::class, 'index']);
+Route::get('preferensi_user/{id}',[ApiPreferensiUser::class, 'show']);
+Route::post('/preferensi_user', [ApiPreferensiUser::class, 'store']);
+Route::put('/preferensi_user/{id}', [ApiPreferensiUser::class, 'update']);
+Route::delete('/preferensi_user/{id}', [ApiPreferensiUser::class, 'destroy']);
+>>>>>>> f82841a4f6879ae72c36be2a404e1d3e62b9724d
 
