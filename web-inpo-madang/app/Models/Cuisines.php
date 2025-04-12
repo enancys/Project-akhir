@@ -10,7 +10,7 @@ class Cuisines extends Model
     use HasFactory;
 
     protected $table = 'cuisines';
-    protected $primaryKey = '$id';
+    protected $primaryKey = 'id';
     protected $fillable = [
         'name'
     ];

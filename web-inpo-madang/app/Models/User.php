@@ -45,13 +45,10 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
-<<<<<<< HEAD
-=======
 
     public function preferensiUser()
 {
     return $this->hasOne(PreferensiUser::class);
 }
 
->>>>>>> f82841a4f6879ae72c36be2a404e1d3e62b9724d
 }

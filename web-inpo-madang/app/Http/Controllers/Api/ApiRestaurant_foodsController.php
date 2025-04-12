@@ -42,7 +42,7 @@ class ApiRestaurant_foodsController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $restaurant_foods = Restaurant_foods::where('restaurant_id', $id);
+        $restaurant_foods = Restaurant_foods::where('restaurant_id', $id)->firstOrFail();;
         $restaurant_foods->update($request->all());
         return response()->json($restaurant_foods);
     }

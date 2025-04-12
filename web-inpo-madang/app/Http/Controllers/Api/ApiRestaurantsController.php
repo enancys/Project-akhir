@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Restaurants;
 
 class ApiRestaurantsController extends Controller
 {
@@ -12,7 +13,8 @@ class ApiRestaurantsController extends Controller
      */
     public function index()
     {
-        //
+        $restaurants = Restaurants::all();
+        return response()->json($restaurants);
     }
 
     /**
@@ -20,7 +22,8 @@ class ApiRestaurantsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $restaurants = Restaurants::create($request->all());
+        return response()->json($restaurants);
     }
 
     /**
@@ -28,7 +31,8 @@ class ApiRestaurantsController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $restaurants = Restaurants::findOrFail($id);
+        return response()->json($restaurants);
     }
 
     /**
@@ -36,7 +40,9 @@ class ApiRestaurantsController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $restaurants = Restaurants::findOrFail($id);
+        $restaurants->update($request->all());
+        return response()->json($restaurants);
     }
 
     /**
@@ -44,6 +50,8 @@ class ApiRestaurantsController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $restaurants = Restaurants::findOrFail($id);
+        $restaurants->delete();
+        return response()->json($restaurants);
     }
 }

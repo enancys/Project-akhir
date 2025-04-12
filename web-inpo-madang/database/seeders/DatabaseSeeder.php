@@ -13,7 +13,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-<<<<<<< HEAD
         $this->call([
             UserSeeder::class,
             CuisinesSeeder::class,
@@ -24,9 +23,7 @@ class DatabaseSeeder extends Seeder
             Food_ingredientsSeeder::class,
             Restaurant_foodsSeeder::class,
         ]);
-=======
         User::factory(10)->create();
 
->>>>>>> f82841a4f6879ae72c36be2a404e1d3e62b9724d
     }
 }

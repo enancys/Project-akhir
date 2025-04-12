@@ -17,7 +17,7 @@ class Restaurants extends Model
         'phone',
         'website_url',
         'opening_hours',
-        'cuisine_id ',
+        'cuisine_id',
         'rating',
         'image_url'
     ];

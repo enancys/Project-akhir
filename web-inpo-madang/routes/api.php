@@ -1,28 +1,23 @@
 <?php
 
-<<<<<<< HEAD
 use App\Http\Controllers\Api\ApiCuisinesController;
 use App\Http\Controllers\Api\ApiFood_ingredientsController;
 use App\Http\Controllers\Api\ApiFoodsController;
 use App\Http\Controllers\Api\ApiIngredientsController;
 use App\Http\Controllers\Api\ApiRestaurant_foodsController;
 use App\Http\Controllers\Api\ApiUser_preferencesController;
+use App\Http\Controllers\Api\ApiRestaurantsController;
 use App\Http\Controllers\Api\ApiUserController;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
-=======
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ApiPreferensiUser;
 use App\Http\Controllers\Api\ApiPangananController;
-
->>>>>>> f82841a4f6879ae72c36be2a404e1d3e62b9724d
+use App\Http\Controllers\Api\ApiRatingsController;
 
 // Route::get('/user', function (Request $request) {
 //     return $request->user();
 // })->middleware('auth:sanctum');
 
-<<<<<<< HEAD
 
 Route::get('/cuisines', [ApiCuisinesController::class, 'index']);
 Route::post('/cuisines', [ApiCuisinesController::class, 'store']);
@@ -48,6 +43,12 @@ Route::get('/ingredients/{id}', [ApiIngredientsController::class, 'show']);
 Route::put('/ingredients/{id}', [ApiIngredientsController::class, 'update']);
 Route::delete('/ingredients/{id}', [ApiIngredientsController::class, 'destroy']);
 
+Route::get('/restaurants', [ApiRestaurantsController::class, 'index']);
+Route::post('/restaurants', [ApiRestaurantsController::class, 'store']);
+Route::get('/restaurants/{id}', [ApiRestaurantsController::class, 'show']);
+Route::put('/restaurants/{id}', [ApiRestaurantsController::class, 'update']);
+Route::delete('/restaurants/{id}', [ApiRestaurantsController::class, 'destroy']);
+
 Route::get('/restaurant_foods', [ApiRestaurant_foodsController::class, 'index']);
 Route::post('/restaurant_foods', [ApiRestaurant_foodsController::class, 'store']);
 Route::get('/restaurant_foods/{id}', [ApiRestaurant_foodsController::class, 'show']);
@@ -65,7 +66,7 @@ Route::post('/user', [ApiUserController::class, 'store']);
 Route::get('/user/{id}', [ApiUserController::class, 'show']);
 Route::put('/user/{id}', [ApiUserController::class, 'update']);
 Route::delete('/user/{id}', [ApiUserController::class, 'destroy']);
-=======
+
 Route::get('/panganan', [ApiPangananController::class, 'index']);
 Route::get('panganan/{id}',[ApiPangananController::class, 'show']);
 Route::post('/panganan', [ApiPangananController::class, 'store']);
@@ -77,5 +78,9 @@ Route::get('preferensi_user/{id}',[ApiPreferensiUser::class, 'show']);
 Route::post('/preferensi_user', [ApiPreferensiUser::class, 'store']);
 Route::put('/preferensi_user/{id}', [ApiPreferensiUser::class, 'update']);
 Route::delete('/preferensi_user/{id}', [ApiPreferensiUser::class, 'destroy']);
->>>>>>> f82841a4f6879ae72c36be2a404e1d3e62b9724d
 
+Route::get('/ratings', [ApiRatingsController::class, 'index']);
+Route::get('ratings/{id}',[ApiRatingsController::class, 'show']);
+Route::post('/ratings', [ApiRatingsController::class, 'store']);
+Route::put('/ratings/{id}', [ApiRatingsController::class, 'update']);
+Route::delete('/ratings/{id}', [ApiRatingsController::class, 'destroy']);
